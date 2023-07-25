@@ -26,8 +26,8 @@ ii ) When `n` is `odd` : We can assume `n = 2k + 1`, where `k` is any positive i
 <hr/>
 
 # Complexity
-- Time complexity: _O(logN)_
-- Space complexity: _O(logN)_
+- :hourglass_flowing_sand: Time complexity: _O(logN)_
+- :package: Space complexity: _O(logN)_
 
 <hr/>
 
@@ -46,3 +46,7 @@ public:
     }
 };
 ```
+<hr/>
+
+- :calender: **Date :** $24/07/2023$
+- :copyright: **Author :** _Siddharth Biswas_  
