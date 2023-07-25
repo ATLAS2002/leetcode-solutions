@@ -1,4 +1,4 @@
-# Intuition
+# :thought_balloon: Intuition
 We can only achieve $O(logN)$ complexity by implementing _binary search_. 
 #### What we know :
 - Peak element **always exists**.
@@ -9,7 +9,7 @@ So the peak element must lie between 2nd and 2nd last element of `arr`. Left and
 
 <hr/>
 
-# Approach
+# :pencil: Approach
 We can start the search from index `1` to `n-2`. 
 Then we find the `mid` index, where `mid = (start + end) / 2`.
 #### The `mid` element can be ...
@@ -22,14 +22,14 @@ Then we find the `mid` index, where `mid = (start + end) / 2`.
 
 <hr/>
 
-# Complexity
+# :bar_chart: Complexity
 - :hourglass_flowing_sand: Time complexity: $O(logN)$
 
 - :package: Space complexity: $O(1)$
 
 <hr/>
 
-# Code
+# :keyboard: Code
 ```cpp
 class Solution {
 public:
@@ -51,5 +51,8 @@ public:
 
 <hr/>
 
-- :calender: **Date :** $25/07/2023$
+# :card_index_dividers: Metadata
+- :question: **Question :** [`Peak Index in a Mountain Array`](https://leetcode.com/problems/peak-index-in-a-mountain-array)
+- :vertical_traffic_light: **Difficulty :** medium 
+- :calendar: **Date :** $25/07/2023$
 - :copyright: **Author :** _Siddharth Biswas_  
