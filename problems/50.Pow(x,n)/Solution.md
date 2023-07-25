@@ -1,9 +1,11 @@
 # Intuition
 > Iterative Approach ⌛
-We can get desired results by just multiplying `x`, `n` times ...but that would make time complexity of this algorithm linear _O(N)_.
+
+We can get desired results by just multiplying `x`, `n` times ...but that would make time complexity of this algorithm linear $O(N)$.
 
 > Divide and Conquer ✔️
-Since, `n` ranges from `INT_MIN` to `INT_MAX`, we are not allowed to implement a simple linear algorithm. What we can do is, Recursively calculate the subproblems and use them accordingly. This would reduce time complexity down to logarithmic _O(logN)_, which is much much better.
+
+Since, `n` ranges from `INT_MIN` to `INT_MAX`, we are not allowed to implement a simple linear algorithm. What we can do is, Recursively calculate the subproblems and use them accordingly. This would reduce time complexity down to logarithmic $O(logN)$, which is much much better.
 
 <hr/>
 
