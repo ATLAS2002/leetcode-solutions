@@ -1,5 +1,3 @@
-<hr/>
-
 # :thought_balloon: Intuition
 > Iterative Approach ⌛
 
