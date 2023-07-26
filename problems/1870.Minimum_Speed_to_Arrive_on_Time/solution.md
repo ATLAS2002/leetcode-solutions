@@ -2,14 +2,14 @@
 First we need to determine whether we can get to the office at all. Even if we are going at maximum possible speed, we have to wait atleast an hour to get next train. If there are `n` trains, `hour` must be greater than `n-1`, otherwise we cannot reach office at time and `return -1`.
 > Tests are generated such that the answer will not exceed $10^7$
 
-We can use _binary search_ to efficiently find minimum speed to reach office in time. The range will be from $$1$$ to $$10^7$$. Choose a speed, if we can reach office by time then try to minimize current speed, else continue the search in higher range.
+We can use _binary search_ to efficiently find minimum speed to reach office in time. The range will be from $1$ to $10^7$. Choose a speed, if we can reach office by time then try to minimize current speed, else continue the search in higher range.
 
 <hr/>
 
 # 📝 Approach
 - Check if `hour` is lesser than or equals to `n-1`, in that case return -1. <br/>
     Else we are sure there is a valid answer to be found.
-- Starting range of speed is `mn`$$=1$$, maximum is `mx`$$=10^7$$. <br/>
+- Starting range of speed is `mn`$=1$, maximum is `mx`$=10^7$. <br/>
     Now, `mx` is the speed which can get us to office in `hour` time.
 - Next part is to find a smaller value for `mx`, which is lesser speed and will send us within `hour` time. <br/>
     So we run the loop until there is no better answer to be found (`mn < mx`).
@@ -27,7 +27,7 @@ We can use _binary search_ to efficiently find minimum speed to reach office in 
 - stores the time required to reach in a local variable `time`.
 - `time` = time to reach `n`-th train + time taken from `n`-th train <br/>
     = sum of `ceil` values of first `n-1` distance/`speed` + distance travelled by `n`-th train / `speed` <br/>
-= $\sum_{i=0}^{n-2}ceil(dist[i]/speed) + dist[n-1]/speed$ 
+= $$\sum_{i=0} ^{n-2} \lceil\frac{dist_i}{speed}\rceil + \frac{dist_{n-1}}{speed}$$
 - returns the local variable `time`.
 
 <hr/>
@@ -40,6 +40,7 @@ We can use _binary search_ to efficiently find minimum speed to reach office in 
 <hr/>
 
 # ⌨️ Code
+
 ```cpp
 class Solution {
 private:
@@ -59,10 +60,18 @@ public:
         int mn = 1, mx = 1e7;
         while(mn < mx) {
             int speed = mn + (mx-mn)/2;
-            double time = timeRequired(dist, speed);
-            if(time <= hour) mx = speed;
-            else mn = speed+1;
+            double time = timeRequired(dist, speed); // time = distance / speed
+            if(time <= hour) mx = speed; // acceptable
+            else mn = speed+1; // slow speed
         }   return mx;
     }
 };
 ```
+
+<hr/>
+
+# :card_index_dividers: Metadata
+- :question: **Question :** [`Minimum Speed to Arrive on Time`](https://leetcode.com/problems/minimum-speed-to-arrive-on-time)
+- :vertical_traffic_light: **Difficulty :** medium 
+- :calendar: **Date :** $26/07/2023$
+- :copyright: **Author :** _Siddharth Biswas_  
