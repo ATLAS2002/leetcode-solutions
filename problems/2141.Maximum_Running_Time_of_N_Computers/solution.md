@@ -18,7 +18,7 @@ For a chosen amount of time, we check if we can extract enough energy from batte
 - takes `batteries`_(energy of every battery)_, `computers`_(total number of computers)_ and `time`_(runtime of computers)_ as parameters.
 - two local variables :
     - `energyRequired`: total energy `n` computers will need to run for `time` minutes. $[energyRequired = n * time]$
-    - `energyAvailable`: maximum energy `batteries` can supply for `time` minutes. $[energyAvailable = \sum_{i=0}^{b-1}min(batteries_i,time)|where,b=batteries.size()]$
+    - `energyAvailable`: maximum energy `batteries` can supply for `time` minutes. $$[energyAvailable = \sum_{i=0}^{b-1}min(batteries_i,time)|where,b=batteries.size()]$$
 - Returns `true` if `energyRequired` is within `energyAvailable`, else returns `false`.
 
 <hr/>
