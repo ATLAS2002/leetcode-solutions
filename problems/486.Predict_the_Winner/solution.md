@@ -4,12 +4,12 @@ Think of it like this: when player_1 chooses a number the **score increases** by
 ### Let's understand this method with an example
 - Suppose one player is picking from range $[l,\dots,r]$.
 - If he picks $l$, then other player has to choose either $l+1$ or $r$. 
-- If he picks $r$, other player will be choosing either $l$ or $r+1$.
+- If he picks $r$, other player will be choosing either $l$ or $r-1$.
 
 And so on this process continues. Both try their best.
 $\therefore$ Final score = sum of all numbers player_1 chose - sum of all numbers player_2 chose
 = 1st pick - 2nd pick + 3rd pick - 4th pick + ...
-= 1st pick - [2nd pick - 3rd pick + 4th pick + ...]
+= 1st pick - [2nd pick - 3rd pick + 4th pick - ...]
 In this way total of player_1's score is being added to final score, and total of player_2's score is being decremented from it.
 There is our recurrence relation! 
 ###### We can use recursion to implement this. And we can further optimize the program using DP.
@@ -21,9 +21,9 @@ There is our recurrence relation!
 - Here, `solve` function recursively searches in every subarray of `nums` which is expensive in terms of time complexity. 
 - It takes the whole `nums` array, a `start` and an `end` point as parameters. Those two integers help to keep track of starting and ending position of current subarray of `nums`.
 - As a base case, check if current subarray exists (whether `start <= end` is true). Else eturn 0, current player cannot choose anymore.
-- If player takes first element of the subarray, then next player will have to choose `start+1` or `end`. 
+- If player takes first element of the subarray, then next player will have to choose `start+1` or `end`. <br/>
  So `takes_first` = `nums[start] - solve(start+1, end)`.
-- If player takes last element of the subarray, next player chooses either `start` or `end-1`.
+- If player takes last element of the subarray, next player chooses either `start` or `end-1`. <br/>
  So `takes_last` = `nums[end] - solve(start, end-1)`.
 - Both players are playing optimally, current answer will be maximum between these two options. `max(takes_first, takes_last)`
 ###### If the final score is greater than or equals to 0, return ***true*** else return ***false***.
