@@ -1,7 +1,11 @@
 # 💭 Intuition
 Only thing that makes this problem harder to solve is that ridiculous constraint. There is no way you can run a loop for $10^9$, also you can not use any logarithmic approach to cut down the time complexity. <br/>
 On the surface it does look impossible, but upon closer inspection you can see as the value of `n` goes higher, the answer also gets closer to 1. <br/>
-![INPUTvsOUTPUT_GRAPH](https://assets.leetcode.com/users/images/e625902a-2dd7-4964-bb28-4f3271f2ae15_1690625521.5589256.png) <br/>
+
+![INPUTvsOUTPUT_GRAPH](https://assets.leetcode.com/users/images/e625902a-2dd7-4964-bb28-4f3271f2ae15_1690625521.5589256.png)
+
+<br/>
+
 After a certain point _`(n = 4800)`_, the answer is always $\to1$. Now we have narrowed down the constraint to 4799. We can use depth first seach to get probability for all operations. Then we memoize it to optimize efficiently.
 
 <hr/>
